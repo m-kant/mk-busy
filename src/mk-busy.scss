@@ -1,0 +1,67 @@
+	
+    /* 
+    BUSY INDICATOR 
+    
+    made by mkant: https://github.com/m-kant
+    */
+    
+@mixin mkbw-size($size){
+		$thickness: round($size/10) + 1;
+		width: $size;
+        height: $size;
+        border-width: $thickness;
+        // outer outline
+		&:after{
+			width:$size;
+			height:$size;
+			top: -1*$thickness;
+			right: -1*$thickness;
+        }
+        // inner outline
+		&:before{
+			width: $size - 2*$thickness;
+			height: $size - 2*$thickness;
+			top: 0;
+			right: 0;
+		}
+}
+
+    .mk-busy-wheel{
+		$default-size: 40px;
+		$thickness: round($default-size/10);
+		$bg: #000;
+        $color: #aaa;
+
+		position: relative;
+		display: inline-block;
+		border-radius:50%;
+		background-color:transparent;
+        box-sizing: border-box;
+        border-style: solid;
+        border-color: $color;
+        border-top-color: transparent;
+        border-bottom-color: transparent;
+		animation: busy-spin 1*1.5s linear infinite;
+
+        // double outlines
+		&:after, &:before{
+			content:'';
+			display: block;
+			position: absolute;
+			border-radius:50%;
+			box-sizing: border-box;
+            border: 1px solid $color;
+        }
+
+        @include mkbw-size($default-size);
+
+        &.mk20{ @include mkbw-size(20px); border-left-color: darken($color,10); border-right-color: darken($color,10); animation-duration: 1s; }
+        &.mk40{ @include mkbw-size(40px); }
+        &.mk60{ @include mkbw-size(60px); }
+        &.mk80{ @include mkbw-size(80px); }
+	}
+
+
+@keyframes busy-spin {
+	100% { transform:rotate(360deg); }
+}

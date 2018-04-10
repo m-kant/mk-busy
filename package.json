@@ -1,0 +1,36 @@
+{
+  "author": {
+    "name": "mkant",
+    "email": "mkant@list.ru",
+    "url": "http://mkant.ru"
+  },
+  "name": "mk-busy",
+  "description": "Busy spinner made with pure CSS",
+  "keywords": [
+    "busy",
+    "indicator",
+    "spinner",
+    "UI",
+    "mobile",
+    "CSS widget",
+    "CSS animation"
+  ],
+  "version": "1.0.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/m-kant/mk-busy.git"
+  },
+  "bugs": {
+    "url": "https://github.com/m-kant/mk-busy/issues"
+  },
+  "homepage": "http://mkant.ru/mink-js/mk-busy/",
+  "devDependencies": {
+    "del": "^2.2.1",
+    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-clean-css": "^2.0.10",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^4.0.1"
+  }
+}
