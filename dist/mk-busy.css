@@ -1,46 +1,50 @@
-/* 
-    BUSY INDICATOR 
-    
+/*
+    BUSY INDICATOR
+
     made by mkant: https://github.com/m-kant
     */
 .mk-busy-wheel {
+  opacity: .4;
   position: relative;
   display: inline-block;
+  vertical-align: middle;
   border-radius: 50%;
   background-color: transparent;
   box-sizing: border-box;
   border-style: solid;
-  border-color: #aaa;
+  border-color: rgba(0, 0, 0, 0.7);
   border-top-color: transparent;
   border-bottom-color: transparent;
-  animation: busy-spin 1.5s linear infinite;
+  -webkit-animation: busy-spin 1.5s linear infinite;
+          animation: busy-spin 1.5s linear infinite;
   width: 40px;
   height: 40px;
-  border-width: 5px; }
+  border-width: 4px; }
   .mk-busy-wheel:after, .mk-busy-wheel:before {
     content: '';
     display: block;
     position: absolute;
     border-radius: 50%;
     box-sizing: border-box;
-    border: 1px solid #aaa; }
+    border: 1px solid rgba(0, 0, 0, 0.7); }
   .mk-busy-wheel:after {
     width: 40px;
     height: 40px;
-    top: -5px;
-    right: -5px; }
+    top: -4px;
+    right: -4px; }
   .mk-busy-wheel:before {
-    width: 30px;
-    height: 30px;
+    width: 32px;
+    height: 32px;
     top: 0;
     right: 0; }
   .mk-busy-wheel.mk20 {
     width: 20px;
     height: 20px;
     border-width: 3px;
-    border-left-color: #919191;
-    border-right-color: #919191;
-    animation-duration: 1s; }
+    border-left-color: rgba(0, 0, 0, 0.7);
+    border-right-color: rgba(0, 0, 0, 0.7);
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s; }
     .mk-busy-wheel.mk20:after {
       width: 20px;
       height: 20px;
@@ -54,46 +58,58 @@
   .mk-busy-wheel.mk40 {
     width: 40px;
     height: 40px;
-    border-width: 5px; }
+    border-width: 4px; }
     .mk-busy-wheel.mk40:after {
       width: 40px;
       height: 40px;
-      top: -5px;
-      right: -5px; }
+      top: -4px;
+      right: -4px; }
     .mk-busy-wheel.mk40:before {
-      width: 30px;
-      height: 30px;
+      width: 32px;
+      height: 32px;
       top: 0;
       right: 0; }
   .mk-busy-wheel.mk60 {
     width: 60px;
     height: 60px;
-    border-width: 7px; }
+    border-width: 5px; }
     .mk-busy-wheel.mk60:after {
       width: 60px;
       height: 60px;
-      top: -7px;
-      right: -7px; }
+      top: -5px;
+      right: -5px; }
     .mk-busy-wheel.mk60:before {
-      width: 46px;
-      height: 46px;
+      width: 50px;
+      height: 50px;
       top: 0;
       right: 0; }
   .mk-busy-wheel.mk80 {
     width: 80px;
     height: 80px;
-    border-width: 9px; }
+    border-width: 6px; }
     .mk-busy-wheel.mk80:after {
       width: 80px;
       height: 80px;
-      top: -9px;
-      right: -9px; }
+      top: -6px;
+      right: -6px; }
     .mk-busy-wheel.mk80:before {
-      width: 62px;
-      height: 62px;
+      width: 68px;
+      height: 68px;
       top: 0;
       right: 0; }
+  .mk-busy-wheel.mk-inverse {
+    opacity: .8;
+    border-left-color: rgba(255, 255, 255, 0.8);
+    border-right-color: rgba(255, 255, 255, 0.8); }
+    .mk-busy-wheel.mk-inverse:after, .mk-busy-wheel.mk-inverse:before {
+      border: 1px solid rgba(255, 255, 255, 0.8); }
+
+@-webkit-keyframes busy-spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
 
 @keyframes busy-spin {
   100% {
-    transform: rotate(360deg); } }
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }

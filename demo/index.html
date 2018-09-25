@@ -17,18 +17,21 @@
 	<script charset='UTF-8' src='../dist/mk-busy.js'></script>
 
 	<link rel="stylesheet" href="style.css">
-	<title>mk-busy Demo</title>
+	<title>mk-busy-wheel</title>
 
 	<style>
 		.place{
 			margin: 10px; text-align:center;
+		}
+		.blacker{
+			color: #fff;
+			background-color: #000000;
 		}
 	</style>
 </head>
 
 <body>
 <div class="container">
-
 	<div class="place well">
 		&lt;div class="mk-busy-wheel">&lt;/div> <br />
 		<div class="mk-busy-wheel"></div>
@@ -37,6 +40,9 @@
 	<div class="place well">
 		&lt;div class="mk-busy-wheel mk20">&lt;/div> <br />
 		<div class="mk-busy-wheel mk20"></div>
+		<p>
+			inline <i class="mk-busy-wheel mk20"></i> spinner
+		</p>
 	</div>
 
 	<div class="place well">
@@ -52,6 +58,11 @@
 	<div class="place well">
 		&lt;div class="mk-busy-wheel mk80">&lt;/div> <br />
 		<div class="mk-busy-wheel mk80"></div>
+	</div>
+
+	<div class="place well blacker">
+		&lt;div class="mk-busy-wheel mk-inverse">&lt;/div> <br />
+		<div class="mk-busy-wheel mk-inverse"></div>
 	</div>
 
 

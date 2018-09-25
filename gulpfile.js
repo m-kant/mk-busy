@@ -13,7 +13,7 @@ gulp.task('styles', function() {
 			'src/mk-busy.scss'
 		)
 		.pipe(sass().on('error', sass.logError))
-		.pipe(prefix())
+		.pipe(prefix({browsers:['> 0.5% in RU']}))
 		.pipe(gulp.dest('dist/'))
 		.pipe(cleanCSS())
 		.pipe(rename('mk-busy.min.css'))

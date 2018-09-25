@@ -1,12 +1,12 @@
-	
-    /* 
-    BUSY INDICATOR 
-    
+
+    /*
+    BUSY INDICATOR
+
     made by mkant: https://github.com/m-kant
     */
-    
-@mixin mkbw-size($size){
-		$thickness: round($size/10) + 1;
+
+@mixin mkbw-size($size, $thickness){
+		// $thickness: round( (45-$size)/10) + 2;
 		width: $size;
         height: $size;
         border-width: $thickness;
@@ -28,17 +28,17 @@
 
     .mk-busy-wheel{
 		$default-size: 40px;
-		$thickness: round($default-size/10);
-		$bg: #000;
-        $color: #aaa;
-
+		$default-thickness: round($default-size/10);
+		$color: rgba(0,0,0,0.7);
+		opacity: .4;
 		position: relative;
 		display: inline-block;
+		vertical-align: middle;
 		border-radius:50%;
 		background-color:transparent;
         box-sizing: border-box;
         border-style: solid;
-        border-color: $color;
+		border-color: $color;
         border-top-color: transparent;
         border-bottom-color: transparent;
 		animation: busy-spin 1*1.5s linear infinite;
@@ -53,12 +53,30 @@
             border: 1px solid $color;
         }
 
-        @include mkbw-size($default-size);
+        @include mkbw-size($default-size, $default-thickness);
 
-        &.mk20{ @include mkbw-size(20px); border-left-color: darken($color,10); border-right-color: darken($color,10); animation-duration: 1s; }
-        &.mk40{ @include mkbw-size(40px); }
-        &.mk60{ @include mkbw-size(60px); }
-        &.mk80{ @include mkbw-size(80px); }
+        &.mk20{
+			@include mkbw-size(20px, 3px);
+			border-left-color: darken($color,10);
+			border-right-color: darken($color,10);
+			animation-duration: 1s;
+		}
+        &.mk40{ @include mkbw-size(40px, 4px); }
+        &.mk60{ @include mkbw-size(60px, 5px); }
+		&.mk80{ @include mkbw-size(80px, 6px); }
+
+        &.mk-inverse{
+			$color: rgba(255,255,255,0.8);
+
+			opacity: .8;
+			border-left-color: $color;
+			border-right-color: $color;
+
+			// double outlines
+			&:after, &:before{
+				border: 1px solid $color;
+			}
+		}
 	}
 
 
